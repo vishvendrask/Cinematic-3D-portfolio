@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme="dark"] {
+    /* RGB triples consumed by Tailwind tokens via rgb(var(--x) / <alpha>) */
+    --bg: 5 5 7;
+    --surface: 12 13 16;
+    --surface-2: 18 19 24;
+    --ink: 245 245 247;
+    --ink-muted: 161 161 170;
+    --ink-faint: 107 111 118;
+    /* Glass + hairlines */
+    --glass-rgb: 255 255 255;
+    --glass-alpha: 0.04;
+    --glass-strong-alpha: 0.06;
+    --glass-border: 255 255 255 / 0.1;
+    --hairline: 255 255 255 / 0.06;
+    --text-gradient: linear-gradient(120deg, #ffffff 10%, #b9c6ff 55%, #8a7dff 100%);
+    --scene-bg: #050507;
+
+    --accent: #4d7cff;
+    --accent-purple: #7c5cff;
+  }
+
+  [data-theme="light"] {
+    --bg: 236 239 245;
+    --surface: 255 255 255;
+    --surface-2: 245 247 251;
+    --ink: 17 19 26;
+    --ink-muted: 70 76 92;
+    --ink-faint: 120 126 140;
+    --glass-rgb: 255 255 255;
+    --glass-alpha: 0.66;
+    --glass-strong-alpha: 0.78;
+    --glass-border: 12 16 28 / 0.1;
+    --hairline: 12 16 28 / 0.1;
+    --text-gradient: linear-gradient(120deg, #0c1230 10%, #2a40a8 55%, #6a45e0 100%);
+    --scene-bg: #e8ebf2;
+  }
+
+  * {
+    border-color: rgb(var(--hairline));
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-ink font-sans antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  ::selection {
+    background: rgba(124, 92, 255, 0.35);
+    color: #ffffff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4d7cff, #7c5cff);
+    border-radius: 999px;
+  }
+
+  /* Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    border: 1px solid rgb(var(--glass-border));
+    background: rgb(var(--glass-rgb) / var(--glass-alpha));
+    @apply backdrop-blur-xl;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06),
+      0 24px 60px -24px rgba(0, 0, 0, 0.8);
+  }
+
+  .glass-strong {
+    border: 1px solid rgb(var(--glass-border));
+    background: rgb(var(--glass-rgb) / var(--glass-strong-alpha));
+    @apply backdrop-blur-2xl;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+      0 32px 80px -32px rgba(0, 0, 0, 0.9);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--text-gradient);
+  }
+
+  .accent-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #4d7cff, #7c5cff);
+  }
+
+  .ring-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .section-pad {
+    @apply px-6 py-28 sm:px-10 md:py-36 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-md;
+    border: 1px solid rgb(var(--glass-border));
+    background: rgb(var(--glass-rgb) / var(--glass-alpha));
+    color: rgb(var(--ink-muted));
+  }
+}
+
+@layer utilities {
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: var(--tw-noise, url());
+    background-size: 180px 180px;
+    mix-blend-mode: overlay;
+  }
+
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  }
+
+  .perspective {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .exp-vignette {
+    background: radial-gradient(
+      circle at 50% 45%,
+      transparent 58%,
+      rgb(var(--bg) / 0.62)
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Reveal animation utility used by scroll reveal hook */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}

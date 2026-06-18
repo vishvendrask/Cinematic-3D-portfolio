@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/><stop offset="1" stop-color="#0d1426"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4d7cff"/><stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="18" fill="url(#bg)"/>
+  <!-- browser bar -->
+  <rect width="1200" height="56" rx="18" fill="#0e1424"/>
+  <circle cx="34" cy="28" r="7" fill="#ff5f57"/><circle cx="58" cy="28" r="7" fill="#febc2e"/><circle cx="82" cy="28" r="7" fill="#28c840"/>
+  <rect x="160" y="16" width="520" height="24" rx="12" fill="#1a2238"/>
+  <text x="184" y="33" font-family="Inter,sans-serif" font-size="14" fill="#7f8db5">connect.cencora.com/dashboard</text>
+  <!-- sidebar -->
+  <rect x="24" y="80" width="200" height="656" rx="14" fill="#0e1626"/>
+  <rect x="48" y="108" width="120" height="14" rx="7" fill="url(#acc)"/>
+  <g fill="#26314f"><rect x="48" y="156" width="152" height="12" rx="6"/><rect x="48" y="190" width="132" height="12" rx="6"/><rect x="48" y="224" width="144" height="12" rx="6"/><rect x="48" y="258" width="120" height="12" rx="6"/><rect x="48" y="292" width="138" height="12" rx="6"/></g>
+  <!-- stat cards -->
+  <g>
+    <rect x="248" y="80" width="290" height="150" rx="14" fill="#101a30"/>
+    <rect x="276" y="108" width="90" height="12" rx="6" fill="#46557f"/>
+    <text x="276" y="180" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff">2.4M</text>
+    <rect x="276" y="198" width="120" height="10" rx="5" fill="#2c385c"/>
+  </g>
+  <g>
+    <rect x="562" y="80" width="290" height="150" rx="14" fill="#101a30"/>
+    <text x="590" y="180" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff">98.7%</text>
+    <rect x="590" y="108" width="90" height="12" rx="6" fill="#46557f"/>
+    <rect x="590" y="198" width="120" height="10" rx="5" fill="#2c385c"/>
+  </g>
+  <g>
+    <rect x="876" y="80" width="300" height="150" rx="14" fill="url(#acc)"/>
+    <text x="904" y="180" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff">340</text>
+    <rect x="904" y="108" width="90" height="12" rx="6" fill="#ffffff" opacity="0.6"/>
+    <rect x="904" y="198" width="120" height="10" rx="5" fill="#ffffff" opacity="0.4"/>
+  </g>
+  <!-- chart -->
+  <rect x="248" y="254" width="604" height="300" rx="14" fill="#101a30"/>
+  <polyline points="280,470 360,420 440,440 520,360 600,392 680,300 760,330 820,270" fill="none" stroke="url(#acc)" stroke-width="4"/>
+  <polygon points="280,470 360,420 440,440 520,360 600,392 680,300 760,330 820,270 820,520 280,520" fill="url(#acc)" opacity="0.12"/>
+  <g stroke="#1c2740" stroke-width="1"><line x1="280" y1="320" x2="820" y2="320"/><line x1="280" y1="400" x2="820" y2="400"/><line x1="280" y1="480" x2="820" y2="480"/></g>
+  <!-- side panel -->
+  <rect x="876" y="254" width="300" height="300" rx="14" fill="#101a30"/>
+  <g fill="#46557f"><rect x="904" y="286" width="160" height="12" rx="6"/><rect x="904" y="320" width="240" height="10" rx="5"/><rect x="904" y="344" width="210" height="10" rx="5"/><rect x="904" y="368" width="230" height="10" rx="5"/></g>
+  <circle cx="1026" cy="470" r="56" fill="none" stroke="#1c2740" stroke-width="14"/>
+  <circle cx="1026" cy="470" r="56" fill="none" stroke="url(#acc)" stroke-width="14" stroke-dasharray="250 352" stroke-linecap="round" transform="rotate(-90 1026 470)"/>
+  <!-- table -->
+  <rect x="248" y="578" width="928" height="158" rx="14" fill="#101a30"/>
+  <g fill="#26314f"><rect x="276" y="606" width="880" height="12" rx="6"/><rect x="276" y="642" width="820" height="10" rx="5"/><rect x="276" y="672" width="860" height="10" rx="5"/><rect x="276" y="702" width="800" height="10" rx="5"/></g>
+</svg>

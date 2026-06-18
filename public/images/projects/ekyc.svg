@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c0a1c"/><stop offset="1" stop-color="#130d2a"/></linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a7dff"/><stop offset="1" stop-color="#5b6bff"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="18" fill="url(#bg)"/>
+  <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6"><stop offset="0" stop-color="#8a7dff" stop-opacity="0.32"/><stop offset="1" stop-color="#8a7dff" stop-opacity="0"/></radialGradient>
+  <rect width="1200" height="760" rx="18" fill="url(#glow)"/>
+  <text x="80" y="120" font-family="Inter,sans-serif" font-size="15" fill="#b1a6ff">eKYC · IDENTITY VERIFICATION</text>
+  <!-- step 1: scan -->
+  <g transform="translate(80,150)">
+    <rect x="0" y="0" width="300" height="540" rx="40" fill="#0e0b24" stroke="#2a2350" stroke-width="3"/>
+    <rect x="14" y="14" width="272" height="512" rx="28" fill="#0b0820"/>
+    <text x="40" y="70" font-family="Inter,sans-serif" font-size="16" fill="#fff">Scan ID</text>
+    <rect x="40" y="100" width="220" height="140" rx="14" fill="url(#acc)" opacity="0.85"/>
+    <rect x="60" y="124" width="90" height="14" rx="7" fill="#fff" opacity="0.8"/>
+    <rect x="60" y="150" width="140" height="10" rx="5" fill="#fff" opacity="0.5"/>
+    <rect x="60" y="170" width="120" height="10" rx="5" fill="#fff" opacity="0.5"/>
+    <circle cx="220" cy="200" r="22" fill="#fff" opacity="0.85"/>
+    <g stroke="#8a7dff" stroke-width="3" fill="none"><rect x="40" y="280" width="60" height="60" rx="10"/><rect x="200" y="280" width="60" height="60" rx="10"/></g>
+    <rect x="40" y="380" width="220" height="48" rx="12" fill="#1a1440"/>
+  </g>
+  <!-- step 2: face -->
+  <g transform="translate(450,150)">
+    <rect x="0" y="0" width="300" height="540" rx="40" fill="#0e0b24" stroke="#2a2350" stroke-width="3"/>
+    <rect x="14" y="14" width="272" height="512" rx="28" fill="#0b0820"/>
+    <text x="40" y="70" font-family="Inter,sans-serif" font-size="16" fill="#fff">Face Match</text>
+    <circle cx="150" cy="220" r="92" fill="none" stroke="url(#acc)" stroke-width="4" stroke-dasharray="6 10"/>
+    <circle cx="150" cy="210" r="50" fill="url(#acc)"/>
+    <path d="M104 300 C104 270 196 270 196 300 Z" fill="url(#acc)"/>
+    <rect x="40" y="370" width="220" height="14" rx="7" fill="#2a2350"/>
+    <rect x="40" y="400" width="180" height="10" rx="5" fill="#1a1440"/>
+    <rect x="40" y="450" width="220" height="48" rx="12" fill="url(#acc)"/>
+  </g>
+  <!-- step 3: verified -->
+  <g transform="translate(820,150)">
+    <rect x="0" y="0" width="300" height="540" rx="40" fill="#0e0b24" stroke="#2a2350" stroke-width="3"/>
+    <rect x="14" y="14" width="272" height="512" rx="28" fill="#0b0820"/>
+    <text x="40" y="70" font-family="Inter,sans-serif" font-size="16" fill="#fff">Verified</text>
+    <circle cx="150" cy="230" r="74" fill="#28c840" opacity="0.18"/>
+    <circle cx="150" cy="230" r="54" fill="#28c840"/>
+    <path d="M124 230 L144 250 L180 210" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="150" y="350" font-family="Inter,sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">Aadhaar OK</text>
+    <rect x="40" y="400" width="220" height="12" rx="6" fill="#2a2350"/>
+    <rect x="40" y="426" width="160" height="12" rx="6" fill="#1a1440"/>
+    <rect x="40" y="470" width="220" height="48" rx="12" fill="#1a1440"/>
+  </g>
+</svg>
