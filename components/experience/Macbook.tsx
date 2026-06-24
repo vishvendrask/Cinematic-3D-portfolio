@@ -6,7 +6,7 @@ import { Html, RoundedBox } from "@react-three/drei";
 import * as THREE from "three";
 import { getProgress, sampleKeyframe } from "@/lib/experience";
 import { lerp } from "@/lib/utils";
-import { ScreenStage } from "./Screens";
+import { SCREEN_H as SCREEN_PIXEL_H, SCREEN_W as SCREEN_PIXEL_W, ScreenStage } from "./Screens";
 
 /* Laptop dimensions (world units). */
 const BASE_W = 4.2;
@@ -15,6 +15,12 @@ const BASE_H = 0.16;
 const SCREEN_W = 4.0;
 const SCREEN_H = 2.55;
 const SCREEN_T = 0.09;
+const SCREEN_FACE_Z = 0;
+const DISPLAY_W = SCREEN_W * 0.84;
+const DISPLAY_H = SCREEN_H * 0.76;
+const DISPLAY_CENTER_Y = SCREEN_H / 2 + 0.08;
+const DISPLAY_DISTANCE_FACTOR =
+  400 * Math.min(DISPLAY_W / SCREEN_PIXEL_W, DISPLAY_H / SCREEN_PIXEL_H);
 
 /** Lid hinge angles: open leans slightly back, closed folds flat over deck. */
 const LID_OPEN = -0.16;
@@ -115,7 +121,7 @@ export function Macbook() {
         </RoundedBox>
 
         {/* Black display substrate */}
-        <mesh position={[0, SCREEN_H / 2, SCREEN_T / 2 + 0.002]}>
+        <mesh position={[0, SCREEN_H / 2, SCREEN_FACE_Z + 0.002]}>
           <planeGeometry args={[SCREEN_W * 0.94, SCREEN_H * 0.9]} />
           <meshStandardMaterial color="#04050a" emissive="#0a1b3a" emissiveIntensity={0.4} />
         </mesh>
@@ -125,8 +131,8 @@ export function Macbook() {
           transform
           occlude={false}
           wrapperClass="pointer-events-none"
-          position={[0, SCREEN_H / 2, SCREEN_T / 2 + 0.012]}
-          scale={0.198}
+          position={[0, DISPLAY_CENTER_Y, SCREEN_FACE_Z + 0.004]}
+          distanceFactor={DISPLAY_DISTANCE_FACTOR}
           zIndexRange={[8, 0]}
         >
           <ScreenStage />

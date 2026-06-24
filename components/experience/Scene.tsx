@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { ContactShadows, Environment, Lightformer } from "@react-three/drei";
+import { Environment, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
 import { getProgress, sampleKeyframe } from "@/lib/experience";
 import { lerp } from "@/lib/utils";
@@ -33,6 +33,45 @@ function CameraRig() {
   return null;
 }
 
+/** Stable fake floor shadow. Avoids framebuffer shimmer from ContactShadows. */
+function GroundShadow({ theme }: { theme: "dark" | "light" }) {
+  const alphaMap = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 256;
+    canvas.height = 256;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    const gradient = ctx.createRadialGradient(128, 128, 8, 128, 128, 128);
+    gradient.addColorStop(0, "rgba(255,255,255,0.95)");
+    gradient.addColorStop(0.42, "rgba(255,255,255,0.48)");
+    gradient.addColorStop(1, "rgba(255,255,255,0)");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 256, 256);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  }, []);
+
+  if (!alphaMap) return null;
+
+  return (
+    <mesh position={[0, -1.08, 0.08]} rotation={[-Math.PI / 2, 0, 0]} scale={[5.4, 3.2, 1]}>
+      <planeGeometry args={[1, 1]} />
+      <meshBasicMaterial
+        transparent
+        depthWrite={false}
+        color={theme === "light" ? "#6f778a" : "#000000"}
+        opacity={theme === "light" ? 0.24 : 0.48}
+        alphaMap={alphaMap}
+      />
+    </mesh>
+  );
+}
+
 /** The full 3D world: lighting, reflections, particles and the laptop. */
 export function Scene() {
   const theme = useTheme();
@@ -54,15 +93,7 @@ export function Scene() {
       <Macbook />
       <Particles />
 
-      <ContactShadows
-        position={[0, -1.1, 0]}
-        opacity={0.55}
-        scale={14}
-        blur={2.6}
-        far={4}
-        color="#000000"
-        resolution={256}
-      />
+      <GroundShadow theme={theme} />
 
       {/* In-memory studio environment for aluminum reflections (no network). */}
       <Environment resolution={256} frames={1}>

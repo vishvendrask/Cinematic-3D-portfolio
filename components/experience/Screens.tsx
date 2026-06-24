@@ -13,7 +13,7 @@ import {
   Wifi,
   BatteryFull,
 } from "lucide-react";
-import { EXPERIENCE, PROJECTS, SKILLS, VISION_AREAS } from "@/lib/data";
+import { ACHIEVEMENTS, EXPERIENCE, PROJECTS, SKILLS, VISION_AREAS } from "@/lib/data";
 import { SITE } from "@/lib/constants";
 import { SCENES, type AppId } from "@/lib/experience";
 import { useActiveScene } from "@/hooks/useActiveScene";
@@ -87,7 +87,7 @@ const screenEnter = {
 /* Desktop                                                             */
 /* ------------------------------------------------------------------ */
 
-const DESKTOP_ICONS = ["About", "Experience", "Projects", "Skills", "Future Vision"];
+const DESKTOP_ICONS = ["About", "Experience", "Projects", "Skills", "Impact"];
 const DOCK = ["Finder", "Safari", "Code", "Terminal", "Music", "Settings"];
 
 function DesktopApp() {
@@ -145,7 +145,7 @@ function DesktopApp() {
           transition={{ delay: 0.3, duration: 0.9 }}
           className="mt-6 max-w-2xl bg-[linear-gradient(120deg,#fff,#bcd0ff,#9a86ff)] bg-clip-text text-5xl font-semibold leading-[1.02] tracking-tight text-transparent"
         >
-          Building Experiences That Feel Alive
+          Building Frontend Systems That Scale
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -153,7 +153,7 @@ function DesktopApp() {
           transition={{ delay: 0.5, duration: 0.9 }}
           className="mt-5 font-mono text-sm tracking-wide text-white/55"
         >
-          React • TypeScript • Architecture • AI
+          React • TypeScript • Redux Toolkit • React Query • Architecture
         </motion.p>
       </div>
 
@@ -178,11 +178,11 @@ function DesktopApp() {
 /* ------------------------------------------------------------------ */
 
 const FINDER_FOLDERS = [
-  { name: "Early Career", count: "2016 — 2018" },
-  { name: "Android Journey", count: "Kotlin · Java" },
-  { name: "React Evolution", count: "2019 — now" },
-  { name: "Frontend Architecture", count: "Design Systems" },
-  { name: "Leadership", count: "Teams of 4–5" },
+  { name: "Android Foundations", count: "2016 — 2020" },
+  { name: "React Growth", count: "2019 — now" },
+  { name: "Enterprise Architecture", count: "Design Systems" },
+  { name: "Team Leadership", count: "4–5 engineers" },
+  { name: "Awards", count: "Best Developer 2020" },
 ];
 
 function FinderApp() {
@@ -190,7 +190,7 @@ function FinderApp() {
     <div className="h-full w-full">
       <MenuBar app="Finder" />
       <div className="h-[calc(100%-2rem)] p-5">
-        <Window title="Vishvendra — Journey" className="h-full">
+        <Window title="Vishvendra — Career" className="h-full">
           <div className="flex h-full">
             <aside className="hidden w-48 shrink-0 flex-col gap-1 border-r border-white/8 bg-white/[0.02] p-3 sm:flex">
               <div className="mb-3 flex items-center gap-2.5 rounded-lg bg-white/[0.04] p-2">
@@ -364,12 +364,12 @@ function MissionApp() {
 /* ------------------------------------------------------------------ */
 
 const SKILL_LEVELS: Record<string, number> = {
+  Languages: 95,
   Frontend: 96,
   Architecture: 92,
   Backend: 74,
   Testing: 85,
   Tools: 90,
-  AI: 80,
 };
 
 function Ring({ value, label }: { value: number; label: string }) {
@@ -458,21 +458,13 @@ function DashboardApp() {
 /* ------------------------------------------------------------------ */
 
 function MetricsApp() {
-  const cards = [
-    { big: "10M+", label: "Users served" },
-    { big: "30%", label: "Faster responsiveness" },
-    { big: "50%", label: "Fewer UI defects" },
-    { big: "4–5", label: "Engineers led" },
-    { big: "2020", label: "Best Developer of the Year" },
-    { big: "Top 10", label: "Intl. industrial training" },
-  ];
   return (
     <div className="h-full w-full">
       <MenuBar app="Metrics" />
       <div className="h-[calc(100%-2rem)] p-5">
         <Window title="Impact" className="h-full">
           <div className="grid h-full grid-cols-3 grid-rows-2 gap-3 p-5">
-            {cards.map((c, i) => (
+            {ACHIEVEMENTS.map((c, i) => (
               <motion.div
                 key={c.label}
                 initial={{ opacity: 0, y: 18 }}
@@ -481,7 +473,9 @@ function MetricsApp() {
                 className="flex flex-col items-center justify-center rounded-xl border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(77,124,255,0.12),transparent_70%)] p-4 text-center"
               >
                 <span className="bg-[linear-gradient(120deg,#fff,#9db4ff)] bg-clip-text text-3xl font-bold tracking-tight text-transparent">
-                  {c.big}
+                  {c.prefix ?? ""}
+                  {c.value}
+                  {c.suffix}
                 </span>
                 <span className="mt-1 text-[11px] text-white/55">{c.label}</span>
               </motion.div>
@@ -494,7 +488,7 @@ function MetricsApp() {
 }
 
 /* ------------------------------------------------------------------ */
-/* AI Lab (Future Vision)                                              */
+/* Engineering Lab (Future Vision)                                     */
 /* ------------------------------------------------------------------ */
 
 const NODES = [
@@ -509,7 +503,7 @@ const NODES = [
 function AILabApp() {
   return (
     <div className="relative h-full w-full overflow-hidden">
-      <MenuBar app="AI Lab" />
+      <MenuBar app="Engineering Lab" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_45%,rgba(124,92,255,0.2),transparent_65%)]" />
       <div className="relative h-[calc(100%-2rem)] p-6">
         <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
@@ -539,7 +533,7 @@ function AILabApp() {
         ))}
         <div className="absolute inset-x-0 top-4 text-center">
           <h3 className="bg-[linear-gradient(120deg,#fff,#b9a6ff)] bg-clip-text text-2xl font-semibold text-transparent">
-            The Future I&apos;m Building Towards
+            What I keep sharpening
           </h3>
         </div>
         <div className="absolute inset-x-6 bottom-5 grid grid-cols-3 gap-2">
@@ -583,7 +577,7 @@ function ShutdownApp() {
         transition={{ delay: 0.4 }}
         className="mt-6 text-sm text-white/50"
       >
-        Let&apos;s build something extraordinary.
+        Let&apos;s build something reliable.
       </motion.p>
       <div className="mt-5 flex items-center gap-4 text-white/40">
         <Github className="h-4 w-4" />

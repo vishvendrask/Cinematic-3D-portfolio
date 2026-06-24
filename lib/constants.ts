@@ -3,15 +3,15 @@ export const SITE = {
   shortName: "Vishvendra",
   role: "Senior Frontend Engineer",
   location: "Bangalore, India",
-  email: "vishvendra.khangarot@gmail.com",
+  email: "vishvendrask@gmail.com",
   avatar: "/images/profile.svg",
   description:
-    "Senior Frontend Engineer with 7+ years building enterprise-scale, cinematic web experiences used by millions. React, TypeScript, architecture and AI.",
+    "Senior Frontend Engineer with 7+ years of experience building scalable enterprise applications with React, TypeScript, Redux Toolkit, React Query, and modern frontend architecture.",
   url: "https://vishvendra.dev",
   socials: {
-    github: "https://github.com/vishvendra",
-    linkedin: "https://linkedin.com/in/vishvendra-khangarot",
-    email: "mailto:vishvendra.khangarot@gmail.com",
+    github: "https://github.com/vishvendrask",
+    linkedin: "https://www.linkedin.com/in/vishvendrask/",
+    email: "mailto:vishvendrask@gmail.com",
   },
 } as const;
 
@@ -20,5 +20,7 @@ export const NAV_LINKS = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Vision", href: "#vision" },
   { label: "Contact", href: "#contact" },
 ] as const;

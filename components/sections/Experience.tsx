@@ -87,8 +87,8 @@ export function Experience() {
       <div className="relative mx-auto max-w-5xl">
         <SectionHeading
           eyebrow="Experience"
-          title="A timeline of building at scale."
-          description="Seven years across global product teams — from banking to healthcare to developer tooling."
+          title="A timeline of frontend delivery at scale."
+          description="IBM, Google, DBS, Cencora, Globals and Adverscribe — spanning healthcare, banking, government and identity products."
         />
 
         <div ref={ref} className="relative mt-20">

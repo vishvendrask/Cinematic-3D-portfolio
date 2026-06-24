@@ -22,8 +22,8 @@ export function FutureVision() {
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="What's Next"
-          title="The Future I'm Building Towards"
-          description="Pushing the frontier where research becomes shipped product."
+          title="What I keep sharpening"
+          description="The practices that matter most in long-lived frontend systems."
         />
 
         <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

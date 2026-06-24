@@ -7,9 +7,9 @@ import { FadeIn } from "@/components/ui/TextReveal";
 import { AmbientGlow } from "@/components/ui/AmbientGlow";
 
 const paragraphs = [
-  "I started in Android development — shipping pixels to real devices and learning how software meets people.",
-  "That curiosity evolved into building enterprise-scale frontend systems used by millions, where architecture, performance and reliability are everything.",
-  "Today I'm obsessed with reusable systems, exceptional UX and the craft of interfaces that feel inevitable — and I'm building toward an AI-native future.",
+  "I started in Android development and learned how software behaves when it reaches real devices and real users.",
+  "That evolved into building enterprise frontend systems with React, TypeScript, Redux Toolkit and React Query across healthcare, banking and government domains.",
+  "Today I focus on reusable systems, performance, and maintainable UI architecture that supports large teams and long-lived products.",
 ];
 
 export function About() {
@@ -44,7 +44,7 @@ export function About() {
               {[
                 { k: "7+", v: "Years" },
                 { k: "10M+", v: "Users reached" },
-                { k: "5", v: "Companies" },
+                { k: "5+", v: "Companies" },
               ].map((stat) => (
                 <div
                   key={stat.v}
@@ -85,7 +85,7 @@ export function About() {
                 { label: "Architecture", x: "8%", y: "14%", d: 0 },
                 { label: "Performance", x: "62%", y: "30%", d: 0.6 },
                 { label: "Design Systems", x: "16%", y: "70%", d: 1.2 },
-                { label: "AI Native", x: "58%", y: "78%", d: 1.8 },
+                { label: "Enterprise UI", x: "58%", y: "78%", d: 1.8 },
               ].map((chip) => (
                 <motion.span
                   key={chip.label}

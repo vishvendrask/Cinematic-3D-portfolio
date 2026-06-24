@@ -11,7 +11,7 @@ const HeroScene = dynamic(
   { ssr: false },
 );
 
-const headlineWords = ["Building", "Experiences", "That", "Feel", "Alive"];
+const headlineWords = ["Building", "Frontend", "Systems", "That", "Scale"];
 
 const container = {
   hidden: {},
@@ -94,7 +94,7 @@ export function Hero() {
           className="mt-8 max-w-2xl text-balance text-base text-ink-muted sm:text-lg"
         >
           Senior Frontend Engineer · 7+ Years Experience · React · TypeScript ·
-          Architecture · AI
+          Redux Toolkit · React Query · Architecture
         </motion.p>
 
         <motion.div
@@ -105,7 +105,7 @@ export function Hero() {
         >
           <a href="#experience">
             <MagneticButton variant="primary">
-              Explore Journey
+              View Experience
               <ArrowDown className="h-4 w-4" />
             </MagneticButton>
           </a>

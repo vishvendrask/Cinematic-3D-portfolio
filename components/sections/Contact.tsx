@@ -35,7 +35,7 @@ export function Contact() {
         </span>
 
         <TextReveal
-          text="Let's Build Something Extraordinary"
+          text="Let's Build Something Reliable"
           as="h2"
           className="justify-center text-balance text-5xl font-semibold leading-[1.02] tracking-tightest text-gradient sm:text-6xl md:text-7xl"
         />
@@ -47,8 +47,8 @@ export function Contact() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mx-auto mt-8 max-w-xl text-lg text-ink-muted"
         >
-          Open to staff-level frontend, architecture and AI/R&D roles — and
-          ambitious collaborations. Let&apos;s make something that feels alive.
+          Open to senior frontend, architecture and platform roles — and
+          selective collaborations on products that need durable UI systems.
         </motion.p>
 
         <motion.div

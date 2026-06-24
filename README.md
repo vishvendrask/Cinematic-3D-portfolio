@@ -1,18 +1,20 @@
 # Vishvendra Singh Khangarot — Cinematic Portfolio
 
-An Awwwards-caliber, cinematic portfolio for **Vishvendra Singh Khangarot**, Senior Frontend Engineer (Bangalore, India). Built as a premium interactive product experience — inspired by Apple, Linear, Vercel, Stripe, Framer and TinyPod.
+An interactive portfolio for **Vishvendra Singh Khangarot**, Senior Frontend Engineer based in Bangalore, India.
+
+This version is aligned with the June 2026 resume: enterprise frontend work across IBM, Google, DBS Bank, Cencora, Globals ITES and Adverscribe, with a focus on React, TypeScript, Redux Toolkit, React Query, architecture and reusable UI systems.
 
 ## ✨ Highlights
 
-- **Cinematic 3D hero** — React Three Fiber + Drei: distorting core geometry, orbiting wireframe rings and a pointer-parallax particle field.
-- **Smooth scrolling** — Lenis synced with GSAP `ScrollTrigger`.
-- **Motion everywhere** — Framer Motion text reveals, staggered entrances, parallax, magnetic buttons, 3D tilt cards, animated counters, blended mouse follower, ambient gradient blobs and film grain.
-- **Glassmorphism design system** — `#050505` background, charcoal surfaces, electric-blue → purple accent gradients, off-white type.
-- **Accessible & performant** — respects `prefers-reduced-motion`, semantic markup, SEO metadata, adaptive DPR for the 3D canvas, mobile-first responsive.
+- **Cinematic 3D experience** — React Three Fiber + Drei power the floating MacBook and scene-driven storytelling.
+- **Resume-backed content** — the site content is mapped to roles, projects, skills and achievements from the PDF.
+- **Motion system** — Framer Motion drives the transitions, reveals, counters, tilt cards and scroll-linked narrative.
+- **Enterprise-focused data model** — experience, projects and capabilities are centralized in `lib/data.ts`.
+- **Accessible and responsive** — respects reduced motion, uses semantic structure and keeps the layout mobile-first.
 
-## 🧱 Stack
+## Stack
 
-Next.js (App Router) · TypeScript · TailwindCSS · Framer Motion · GSAP + ScrollTrigger · Lenis · React Three Fiber · Drei · Lucide Icons · Geist font.
+Next.js (App Router) · TypeScript · TailwindCSS · Framer Motion · Lenis · React Three Fiber · Drei · Lucide Icons · Geist font.
 
 ## 🚀 Getting started
 
@@ -30,33 +32,28 @@ npm run build
 npm run start
 ```
 
-## 🗂 Architecture
+## Project structure
 
 ```
 app/
-  layout.tsx            # Fonts, metadata, providers, chrome
-  page.tsx              # Section composition
-  globals.css           # Tailwind layers + design tokens
+  layout.tsx            # Metadata, fonts, providers, chrome
+  page.tsx              # Main route
+  globals.css           # Tailwind layers and design tokens
 components/
   layout/               # Navbar, Footer
-  providers/            # Lenis + GSAP smooth scroll
-  sections/             # Hero, About, Experience, Projects, Skills,
-                        # Achievements, FutureVision, Contact
-  three/                # R3F hero scene + content
-  ui/                   # MagneticButton, TiltCard, MouseFollower,
-                        # TextReveal, AnimatedCounter, SectionHeading,
-                        # AmbientGlow, GrainOverlay
-hooks/                  # useMagnetic, useTilt, useMousePosition,
-                        # usePrefersReducedMotion
-lib/                    # constants, data (content), utils
+  providers/            # Theme and scroll providers
+  sections/             # Hero, About, Experience, Projects, Skills, Achievements, FutureVision, Contact
+  experience/           # Cinematic scroll narrative and laptop screens
+  three/                # Hero scene
+  ui/                   # Shared motion and display components
+hooks/                  # Shared hooks
+lib/                    # constants, data, experience, utils
 ```
 
-All content lives in [lib/data.ts](lib/data.ts) and [lib/constants.ts](lib/constants.ts) — edit there to update experience, projects, skills, achievements, links and copy.
+All content lives in `lib/data.ts`, `lib/constants.ts` and `lib/experience.ts`.
 
 ## 🎨 Customizing
 
 - **Colors / tokens** — [tailwind.config.ts](tailwind.config.ts)
-- **Copy & data** — [lib/data.ts](lib/data.ts), [lib/constants.ts](lib/constants.ts)
+- **Copy and data** — [lib/data.ts](lib/data.ts), [lib/constants.ts](lib/constants.ts), [lib/experience.ts](lib/experience.ts)
 - **3D scene** — [components/three/HeroSceneContent.tsx](components/three/HeroSceneContent.tsx)
-
-> Replace the placeholder email and social URLs in [lib/constants.ts](lib/constants.ts) with real ones before deploying.

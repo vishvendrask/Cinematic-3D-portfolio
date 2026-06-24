@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   Boxes,
+  Code2,
   Cpu,
   FlaskConical,
   Layers,
@@ -16,12 +17,13 @@ import { AmbientGlow } from "@/components/ui/AmbientGlow";
 import { cn } from "@/lib/utils";
 
 const ICONS: Record<string, typeof Cpu> = {
+  Languages: Code2,
   Frontend: Layers,
   Architecture: Boxes,
   Backend: Server,
   Testing: FlaskConical,
   Tools: Wrench,
-  AI: Cpu,
+  Default: Cpu,
 };
 
 export function Skills() {
@@ -34,7 +36,7 @@ export function Skills() {
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Capabilities"
-          title="A toolkit honed across teams."
+          title="A toolkit honed across enterprise teams."
           description="Hover a domain to explore the stack. Built for performance, reuse and longevity."
           align="center"
         />
@@ -42,7 +44,7 @@ export function Skills() {
         {/* category selector */}
         <div className="mt-16 flex flex-wrap justify-center gap-3">
           {SKILLS.map((group) => {
-            const Icon = ICONS[group.category] ?? Cpu;
+            const Icon = ICONS[group.category] ?? ICONS.Default;
             const isActive = active === group.category;
             return (
               <button

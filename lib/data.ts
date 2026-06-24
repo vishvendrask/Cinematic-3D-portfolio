@@ -11,64 +11,82 @@ export interface ExperienceItem {
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    company: "IBM India",
+    company: "IBM India Pvt. Ltd.",
     client: "Cencora (AmerisourceBergen)",
     role: "Senior Frontend Engineer",
-    period: "2022 — Present",
+    period: "Oct 2024 — Present",
     location: "Bangalore, India",
     summary:
-      "Architecting scalable React & TypeScript platforms for one of the world's largest healthcare distributors.",
+      "Building the Cencora Connect Portal with reusable React and TypeScript systems for enterprise healthcare workflows.",
     highlights: [
-      "Scalable React and TypeScript solutions across enterprise products",
-      "Designed and maintained reusable component systems",
-      "Enterprise-grade frontend architecture and patterns",
-      "Cross-functional collaboration with design, product and backend",
+      "Scalable React and TypeScript solutions for Cencora Connect",
+      "Reusable component systems and frontend architecture patterns",
+      "Cross-functional delivery with backend and product teams",
     ],
-    stack: ["React", "TypeScript", "Design Systems", "Architecture"],
+    stack: ["React", "TypeScript", "Redux Toolkit", "React Query"],
   },
   {
-    company: "Google",
+    company: "IBM India Pvt. Ltd.",
+    client: "Google",
     role: "Lead Frontend Engineer",
-    period: "2021 — 2022",
+    period: "Dec 2023 — Oct 2024",
+    location: "Bangalore, India",
     summary:
-      "Led a team building an internal Test Data Management platform from the ground up.",
+      "Led the frontend build of Google’s Test Data Management platform and guided the React.js to Angular migration.",
     highlights: [
-      "Led a team of 4–5 engineers end-to-end",
-      "Built the Test Data Management platform from scratch",
-      "Drove the React → Angular migration strategy",
-      "BOQ and Piper integration across services",
-      "Jenkins and Azure DevOps CI/CD pipelines",
+      "Led a cross-functional team of 4–5 engineers",
+      "Built the Test Data Management platform from the ground up",
+      "Migrated key surfaces from React.js to Angular",
+      "Integrated BOQ and Piper into enterprise workflows",
+      "Implemented Jenkins and Azure DevOps CI/CD pipelines",
       "Improved responsiveness by 30% and reduced UI defects by 50%",
     ],
-    stack: ["React", "Angular", "CI/CD", "Azure DevOps", "Leadership"],
+    stack: ["React", "Angular", "Jenkins", "Azure DevOps"],
   },
   {
-    company: "DBS Bank",
+    company: "IBM India Pvt. Ltd.",
+    client: "DBS Bank",
     role: "Senior React Developer",
-    period: "2020 — 2021",
+    period: "Feb 2022 — Dec 2023",
+    location: "Bangalore, India",
     summary:
-      "Built microfrontend banking dashboards and a shared component library serving 10M+ users.",
+      "Delivered microfrontend banking dashboards and a shared component library for high-traffic financial products.",
     highlights: [
-      "Microfrontend architecture at scale",
-      "High-density banking dashboards",
-      "Shared TypeScript component library",
-      "Applications serving 10M+ users",
+      "Microfrontend modules powering payments and account dashboards",
+      "Served over 10M users",
+      "Reusable TypeScript component library adopted by internal teams",
+      "Performance-focused rendering and dashboard improvements",
     ],
-    stack: ["React", "Microfrontends", "TypeScript", "Module Federation"],
+    stack: ["React", "TypeScript", "Microfrontends", "Component Library"],
   },
   {
-    company: "Globals ITES",
-    role: "Frontend Engineer",
+    company: "Globals ITES Pvt. Ltd.",
+    role: "Senior Software Developer",
     period: "2020 — 2022",
+    location: "Bangalore, India",
     summary:
-      "Delivered citizen-scale government, defence and eKYC platforms.",
+      "Delivered government, defence and eKYC products across React, Redux and Android ecosystems.",
     highlights: [
-      "Government of Karnataka digital platform",
-      "Mission-critical defence applications",
-      "eKYC platform with biometric verification",
+      "Labor welfare platform for the Government of Karnataka",
+      "Secure Android applications and monitoring dashboards for defence",
+      "eKYC verification with Aadhaar and biometric flows",
       "Awarded Best Developer of the Year 2020",
     ],
-    stack: ["Vue", "Kotlin", "eKYC", "Android"],
+    stack: ["React", "Redux", "Android", "Kotlin"],
+  },
+  {
+    company: "Adverscribe Ad Solutions Pvt. Ltd.",
+    role: "Associate Developer",
+    period: "Aug 2019 — Apr 2020",
+    location: "Bangalore, India",
+    summary:
+      "Built dashboards, booking flows and reporting tools across React, Android and PHP ecosystems.",
+    highlights: [
+      "Delivered 15+ projects across multiple ecosystems",
+      "Built dashboards, booking flows and reporting tools",
+      "Supported operational and reporting workflows",
+    ],
+    stack: ["React", "Android", "PHP"],
   },
 ];
 
@@ -91,19 +109,19 @@ export const PROJECTS: Project[] = [
     id: "cencora-connect",
     title: "Cencora Connect Portal",
     category: "Enterprise Healthcare",
-    year: "2023",
+    year: "2024",
     tagline:
-      "A scalable React + TypeScript portal powering pharmaceutical distribution workflows.",
+      "A scalable React and TypeScript portal powering pharmaceutical distribution workflows.",
     image: "/images/projects/cencora-connect.svg",
-    stack: ["React", "TypeScript", "Design System", "React Query"],
+    stack: ["React", "TypeScript", "Redux Toolkit", "React Query"],
     challenge:
-      "Unify fragmented internal tools into a single, accessible portal without sacrificing performance at enterprise scale.",
+      "Unify fragmented internal tools into a single accessible portal without sacrificing enterprise performance.",
     solution:
-      "Designed a modular component architecture and a typed design system that let multiple teams ship in parallel.",
+      "Designed a modular component architecture and typed UI patterns that let multiple teams ship in parallel.",
     results: [
-      "Reusable component systems adopted org-wide",
+      "Reusable systems for enterprise teams",
       "Consistent, accessible UX across products",
-      "Faster feature delivery via shared primitives",
+      "Faster delivery via shared primitives",
     ],
     accent: "#4d7cff",
   },
@@ -111,15 +129,15 @@ export const PROJECTS: Project[] = [
     id: "google-tdm",
     title: "Test Data Management Platform",
     category: "Developer Tooling · Google",
-    year: "2022",
+    year: "2024",
     tagline:
       "Led frontend for an internal platform that orchestrates test data across services.",
     image: "/images/projects/google-tdm.svg",
-    stack: ["React", "Angular", "Azure DevOps", "Jenkins"],
+    stack: ["React", "Angular", "Jenkins", "Azure DevOps"],
     challenge:
-      "Build a complex orchestration UI from scratch while migrating a legacy React surface to Angular.",
+      "Build a complex orchestration UI from scratch while migrating key surfaces from React.js to Angular.",
     solution:
-      "Created animated workflow visualizations and flow diagrams that made multi-step data pipelines legible.",
+      "Created robust workflow interactions and migration patterns that made multi-step data pipelines legible.",
     results: [
       "30% improvement in responsiveness",
       "50% reduction in UI defects",
@@ -131,15 +149,15 @@ export const PROJECTS: Project[] = [
     id: "dbs-bank",
     title: "DBS Bank Dashboards",
     category: "FinTech · Microfrontends",
-    year: "2021",
+    year: "2023",
     tagline:
-      "Microfrontend payment dashboards and a shared library serving 10M+ users.",
+      "Microfrontend payment dashboards and a shared library serving over 10M users.",
     image: "/images/projects/dbs-bank.svg",
-    stack: ["React", "Microfrontends", "TypeScript", "Module Federation"],
+    stack: ["React", "TypeScript", "Microfrontends", "Component Library"],
     challenge:
       "Enable independent teams to deploy banking surfaces without breaking a shared experience.",
     solution:
-      "Implemented module-federation microfrontends with a versioned, typed component library.",
+      "Implemented microfrontends with a versioned, typed component library.",
     results: [
       "10M+ users served reliably",
       "Independent team deployments",
@@ -150,20 +168,20 @@ export const PROJECTS: Project[] = [
   {
     id: "gov-defence",
     title: "Government Defence Platform",
-    category: "Mobile · Award Winning",
-    year: "2020",
+    category: "Government · Defence",
+    year: "2021",
     tagline:
-      "Award-winning defence application crafted with Kotlin and Vue.",
+      "Secure Android applications and dashboards built for a defence project.",
     image: "/images/projects/gov-defence.svg",
-    stack: ["Kotlin", "Vue", "Android", "Security"],
+    stack: ["Android", "Kotlin", "Vue", "Security"],
     challenge:
-      "Deliver a secure, mission-critical mobile experience under strict compliance requirements.",
+      "Deliver a secure, mission-critical experience under strict compliance requirements.",
     solution:
-      "Engineered a hardened native Android experience with a fluid Vue companion surface.",
+      "Engineered a hardened native Android experience with a monitoring dashboard surface.",
     results: [
-      "Award-winning delivery",
+      "Best Developer of the Year 2020",
       "Hardened, compliant architecture",
-      "Premium native mobile experience",
+      "Secure defence delivery",
     ],
     accent: "#5b8bff",
   },
@@ -171,15 +189,15 @@ export const PROJECTS: Project[] = [
     id: "ekyc",
     title: "eKYC Verification Platform",
     category: "Identity · Biometrics",
-    year: "2020",
+    year: "2021",
     tagline:
-      "Biometric verification with Aadhaar integration and animated device flows.",
+      "Identity verification with Aadhaar and biometric flows.",
     image: "/images/projects/ekyc.svg",
-    stack: ["Vue", "Biometrics", "Aadhaar", "Security"],
+    stack: ["React", "Redux", "Aadhaar", "Biometrics"],
     challenge:
       "Make biometric, document and Aadhaar verification feel effortless and trustworthy.",
     solution:
-      "Built guided, animated device experiences that reduced drop-off during verification.",
+      "Built guided verification experiences that reduced friction during onboarding.",
     results: [
       "Seamless Aadhaar integration",
       "Trustworthy biometric flows",
@@ -196,14 +214,19 @@ export interface SkillGroup {
 
 export const SKILLS: SkillGroup[] = [
   {
+    category: "Languages",
+    skills: ["TypeScript", "JavaScript"],
+  },
+  {
     category: "Frontend",
     skills: [
       "React",
-      "TypeScript",
       "Redux Toolkit",
       "React Query",
       "Next.js",
       "Angular",
+      "HTML5",
+      "CSS3",
       "TailwindCSS",
       "Material UI",
     ],
@@ -228,15 +251,6 @@ export const SKILLS: SkillGroup[] = [
   {
     category: "Tools",
     skills: ["Docker", "Git", "CI/CD", "Webpack", "Vite", "Postman", "Jira"],
-  },
-  {
-    category: "AI",
-    skills: [
-      "LLMs",
-      "AI Agents",
-      "Workflow Automation",
-      "Developer Productivity",
-    ],
   },
 ];
 
@@ -264,33 +278,33 @@ export interface VisionArea {
 
 export const VISION_AREAS: VisionArea[] = [
   {
-    title: "AI & Agents",
+    title: "Frontend Architecture",
     description:
-      "Composing LLMs and autonomous agents into reliable, production-grade workflows.",
+      "Designing maintainable React and TypeScript systems that stay coherent as products grow.",
   },
   {
-    title: "Developer Tools",
+    title: "Design Systems",
     description:
-      "Building tooling that compounds engineering velocity and joy.",
+      "Building reusable component systems that keep teams aligned and shipping in parallel.",
   },
   {
-    title: "Human–Computer Interaction",
+    title: "Performance Optimization",
     description:
-      "Designing interfaces that feel intuitive, responsive and alive.",
+      "Tuning rendering, state flow and interaction patterns for fast enterprise interfaces.",
   },
   {
-    title: "Intelligent Interfaces",
+    title: "Enterprise Scale",
     description:
-      "Surfaces that anticipate intent and adapt to the person using them.",
+      "Delivering products that serve banking, healthcare and government workflows at scale.",
   },
   {
-    title: "Spatial Computing",
+    title: "Developer Experience",
     description:
-      "Exploring depth, 3D and immersive experiences on the open web.",
+      "Reducing friction in APIs, tooling and workflows so teams can ship with confidence.",
   },
   {
-    title: "R&D Engineering",
+    title: "Cross-functional Leadership",
     description:
-      "Prototyping the frontier where research becomes shipped product.",
+      "Leading engineers and collaborating across product, design and backend partners.",
   },
 ];

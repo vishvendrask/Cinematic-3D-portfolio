@@ -212,12 +212,12 @@ export function Narrative() {
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <a href="#projects">
             <MagneticButton variant="primary">
-              Explore the OS
+              View Projects
               <ArrowDown className="h-4 w-4" />
             </MagneticButton>
           </a>
           <a href="#contact">
-            <MagneticButton variant="ghost">Say hello</MagneticButton>
+            <MagneticButton variant="ghost">Contact</MagneticButton>
           </a>
         </div>
       </PanelShell>
@@ -250,7 +250,7 @@ export function Narrative() {
         </div>
       </PanelShell>
 
-      {/* 6 — Future Vision / AI Lab */}
+      {/* 6 — Future Vision / Engineering Lab */}
       <PanelShell index={6} align="left">
         <div className="mt-6 flex flex-wrap gap-2">
           {VISION_AREAS.map((v) => (

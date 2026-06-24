@@ -178,8 +178,8 @@ export function Projects() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Selected Work"
-          title="Products engineered for scale."
-          description="Case studies spanning enterprise healthcare, developer tooling, fintech and identity."
+          title="Products engineered for enterprise constraints."
+          description="Case studies spanning healthcare, developer tooling, fintech, government and identity."
         />
 
         <div className="mt-20 grid gap-6 lg:grid-cols-2">
