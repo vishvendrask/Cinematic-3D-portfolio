@@ -19,6 +19,11 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+
     if (prefersReduced) {
       ScrollTrigger.refresh();
       return;
@@ -30,6 +35,8 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
       smoothWheel: true,
       touchMultiplier: 1.5,
     });
+
+    lenis.scrollTo(0, { immediate: true });
 
     lenis.on("scroll", ScrollTrigger.update);
 

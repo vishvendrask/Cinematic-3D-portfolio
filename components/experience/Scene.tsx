@@ -35,6 +35,7 @@ function CameraRig() {
 
 /** Stable fake floor shadow. Avoids framebuffer shimmer from ContactShadows. */
 function GroundShadow({ theme }: { theme: "dark" | "light" }) {
+  const material = useRef<THREE.MeshBasicMaterial>(null);
   const alphaMap = useMemo(() => {
     const canvas = document.createElement("canvas");
     canvas.width = 256;
@@ -56,12 +57,23 @@ function GroundShadow({ theme }: { theme: "dark" | "light" }) {
     return texture;
   }, []);
 
+  useFrame((ctx, delta) => {
+    if (!material.current) return;
+
+    const k = sampleKeyframe(getProgress());
+    const a = 1 - Math.pow(0.003, delta);
+    const breathe = 1 + Math.sin(ctx.clock.elapsedTime * 0.8) * 0.04;
+    const base = theme === "light" ? 0.24 : 0.48;
+    material.current.opacity = lerp(material.current.opacity, base * k.shadow * breathe, a);
+  });
+
   if (!alphaMap) return null;
 
   return (
     <mesh position={[0, -1.08, 0.08]} rotation={[-Math.PI / 2, 0, 0]} scale={[5.4, 3.2, 1]}>
       <planeGeometry args={[1, 1]} />
       <meshBasicMaterial
+        ref={material}
         transparent
         depthWrite={false}
         color={theme === "light" ? "#6f778a" : "#000000"}
@@ -69,6 +81,46 @@ function GroundShadow({ theme }: { theme: "dark" | "light" }) {
         alphaMap={alphaMap}
       />
     </mesh>
+  );
+}
+
+function CinematicLights({ theme }: { theme: "dark" | "light" }) {
+  const keyLight = useRef<THREE.DirectionalLight>(null);
+  const leftGlow = useRef<THREE.PointLight>(null);
+  const rightGlow = useRef<THREE.PointLight>(null);
+  const topSpot = useRef<THREE.SpotLight>(null);
+
+  useFrame((ctx, delta) => {
+    const k = sampleKeyframe(getProgress());
+    const a = 1 - Math.pow(0.004, delta);
+    const breathe = 1 + Math.sin(ctx.clock.elapsedTime * 0.72) * 0.06;
+    const themeBoost = theme === "light" ? 0.78 : 1;
+
+    if (keyLight.current) {
+      keyLight.current.intensity = lerp(keyLight.current.intensity, 1.45 * themeBoost * breathe, a);
+    }
+
+    if (leftGlow.current) {
+      leftGlow.current.intensity = lerp(leftGlow.current.intensity, 22 * k.glow * breathe, a);
+    }
+
+    if (rightGlow.current) {
+      rightGlow.current.intensity = lerp(rightGlow.current.intensity, 18 * k.glow * breathe, a);
+    }
+
+    if (topSpot.current) {
+      topSpot.current.intensity = lerp(topSpot.current.intensity, 24 * k.reflection * breathe, a);
+    }
+  });
+
+  return (
+    <>
+      <ambientLight intensity={theme === "light" ? 0.85 : 0.45} />
+      <directionalLight ref={keyLight} position={[5, 6, 4]} intensity={1.6} color="#cdd7ff" />
+      <pointLight ref={leftGlow} position={[-6, 2, 3]} intensity={28} color="#4d7cff" />
+      <pointLight ref={rightGlow} position={[6, -2, 2]} intensity={20} color="#7c5cff" />
+      <spotLight ref={topSpot} position={[0, 8, 3]} angle={0.5} penumbra={1} intensity={30} color="#ffffff" />
+    </>
   );
 }
 
@@ -84,11 +136,7 @@ export function Scene() {
 
       <CameraRig />
 
-      <ambientLight intensity={theme === "light" ? 0.85 : 0.45} />
-      <directionalLight position={[5, 6, 4]} intensity={1.6} color="#cdd7ff" />
-      <pointLight position={[-6, 2, 3]} intensity={28} color="#4d7cff" />
-      <pointLight position={[6, -2, 2]} intensity={20} color="#7c5cff" />
-      <spotLight position={[0, 8, 3]} angle={0.5} penumbra={1} intensity={30} color="#ffffff" />
+      <CinematicLights theme={theme} />
 
       <Macbook />
       <Particles />
