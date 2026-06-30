@@ -24,7 +24,7 @@ function TimelineRow({ item }: { item: ExperienceItem }) {
           {item.period}
         </span>
         {item.location && (
-          <p className="mt-1 text-xs text-ink-faint">{item.location}</p>
+          <p className="mt-1 text-xs text-gray-300">{item.location}</p>
         )}
       </div>
 
@@ -34,15 +34,15 @@ function TimelineRow({ item }: { item: ExperienceItem }) {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.06]">
             <Building2 className="h-4 w-4 text-accent-electric" />
           </span>
-          <h3 className="text-xl font-semibold text-ink">{item.company}</h3>
+           <h3 className="text-xl font-semibold text-white">{item.company}</h3>
           {item.client && (
-            <span className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-ink-muted">
+               <span className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-white">
               {item.client}
             </span>
           )}
         </div>
         <p className="mt-2 text-sm font-medium text-accent-purple">{item.role}</p>
-        <p className="mt-4 text-base leading-relaxed text-ink-muted">
+         <p className="mt-4 text-base leading-relaxed text-white">
           {item.summary}
         </p>
 
@@ -50,7 +50,7 @@ function TimelineRow({ item }: { item: ExperienceItem }) {
           {item.highlights.map((h) => (
             <li
               key={h}
-              className="flex items-start gap-2 text-sm text-ink-muted"
+               className="flex items-start gap-2 text-sm text-white"
             >
               <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-electric" />
               {h}
@@ -62,7 +62,7 @@ function TimelineRow({ item }: { item: ExperienceItem }) {
           {item.stack.map((s) => (
             <span
               key={s}
-              className="rounded-full border border-white/10 px-3 py-1 text-xs text-ink-muted"
+               className="rounded-full border border-white/10 px-3 py-1 text-xs text-white"
             >
               {s}
             </span>

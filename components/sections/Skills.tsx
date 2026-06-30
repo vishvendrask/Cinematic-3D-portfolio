@@ -34,12 +34,13 @@ export function Skills() {
     <section id="skills" className="relative section-pad">
       <AmbientGlow />
       <div className="relative mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Capabilities"
-          title="A toolkit honed across enterprise teams."
-          description="Hover a domain to explore the stack. Built for performance, reuse and longevity."
-          align="center"
-        />
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="A toolkit honed across enterprise teams."
+            description="Hover a domain to explore the stack. Built for performance, reuse and longevity."
+            align="center"
+            className="text-white"
+          />
 
         {/* category selector */}
         <div className="mt-16 flex flex-wrap justify-center gap-3">
@@ -55,7 +56,7 @@ export function Skills() {
                 data-cursor="hover"
                 className={cn(
                   "relative flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors duration-300",
-                  isActive ? "text-white" : "text-ink-muted hover:text-ink",
+                   isActive ? "text-white" : "text-white hover:text-ink",
                 )}
               >
                 {isActive && (
@@ -92,7 +93,7 @@ export function Skills() {
                 className="glass group relative rounded-2xl px-6 py-5 text-center"
               >
                 <span className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_center,rgba(124,140,255,0.25),transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="relative text-base font-medium text-ink">
+                 <span className="relative text-base font-medium text-white">
                   {skill}
                 </span>
               </motion.div>

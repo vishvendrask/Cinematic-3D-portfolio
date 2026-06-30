@@ -32,7 +32,7 @@ export function About() {
           <div ref={ref} className="mt-12 space-y-7">
             {paragraphs.map((p, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <p className="text-lg leading-relaxed text-ink-muted sm:text-xl">
+                 <p className="text-lg leading-relaxed text-white sm:text-xl">
                   {p}
                 </p>
               </FadeIn>
@@ -53,7 +53,7 @@ export function About() {
                   <dt className="text-3xl font-semibold accent-gradient-text">
                     {stat.k}
                   </dt>
-                  <dd className="mt-1 text-xs uppercase tracking-widest text-ink-faint">
+                  <dd className="mt-1 text-xs uppercase tracking-widest text-gray-300">
                     {stat.v}
                   </dd>
                 </div>
@@ -89,7 +89,7 @@ export function About() {
               ].map((chip) => (
                 <motion.span
                   key={chip.label}
-                  className="glass absolute rounded-full px-4 py-2 text-xs font-medium text-ink"
+                   className="glass absolute rounded-full px-4 py-2 text-xs font-medium text-gray-300"
                   style={{ left: chip.x, top: chip.y }}
                   animate={{ y: [0, -12, 0] }}
                   transition={{

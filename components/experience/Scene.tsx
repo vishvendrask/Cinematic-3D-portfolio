@@ -8,7 +8,7 @@ import { getProgress, sampleKeyframe } from "@/lib/experience";
 import { lerp } from "@/lib/utils";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { Macbook } from "./Macbook";
-import { Particles } from "./Particles";
+// Particles component removed to keep background clean
 
 /** Eases the camera dolly + parallax from the active keyframe each frame. */
 function CameraRig() {
@@ -127,25 +127,27 @@ function CinematicLights({ theme }: { theme: "dark" | "light" }) {
 /** The full 3D world: lighting, reflections, particles and the laptop. */
 export function Scene() {
   const theme = useTheme();
-  const bg = theme === "light" ? "#dfe4ee" : "#050507";
 
   return (
-    <>
-      <color attach="background" args={[bg]} />
-      <fog attach="fog" args={[bg, 9, 20]} />
+    <> 
+      {/* Disable three.js background to allow DesktopBackground to show */}
+      {/* <color attach="background" args={[bg]} /> */}
+      {/* <fog attach="fog" args={[bg, 9, 20]} /> */}
 
       <CameraRig />
 
       <CinematicLights theme={theme} />
 
       <Macbook />
-      <Particles />
+        {/* Particles removed to keep desktop background clean */}
+        {/* <Particles /> */}
 
       <GroundShadow theme={theme} />
 
       {/* In-memory studio environment for aluminum reflections (no network). */}
-      <Environment resolution={256} frames={1}>
-        <color attach="background" args={["#05060a"]} />
+        <Environment resolution={256} frames={1}>
+          {/* Remove explicit background to let DesktopBackground show */}
+          {/* <color attach="background" args={["#05060a"]} /> */}
         <Lightformer
           form="rect"
           intensity={2.4}

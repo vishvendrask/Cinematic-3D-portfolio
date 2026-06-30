@@ -63,8 +63,8 @@ export function Hero() {
           transition={{ delay: 0.15, duration: 0.8 }}
           className="eyebrow mb-8"
         >
-          <Sparkles className="h-3.5 w-3.5 text-accent-electric" />
-          Senior Frontend Engineer · Bangalore, India
+           <Sparkles className="h-3.5 w-3.5 text-accent-electric" />
+           <span className="text-white">Senior Frontend Engineer · Bangalore, India</span>
         </motion.span>
 
         <motion.h1
@@ -91,10 +91,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.9 }}
-          className="mt-8 max-w-2xl text-balance text-base text-ink-muted sm:text-lg"
-        >
-          Senior Frontend Engineer · 7+ Years Experience · React · TypeScript ·
-          Redux Toolkit · React Query · Architecture
+           className="mt-8 max-w-2xl text-balance text-base text-white sm:text-lg"
+         >
+           <span className="text-white">Senior Frontend Engineer · 7+ Years Experience · React · TypeScript · Redux Toolkit · React Query · Architecture</span>
         </motion.p>
 
         <motion.div
@@ -124,7 +123,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-ink-faint"
+         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white"
         data-cursor="hover"
       >
         <span className="text-[0.65rem] uppercase tracking-[0.3em]">Scroll</span>

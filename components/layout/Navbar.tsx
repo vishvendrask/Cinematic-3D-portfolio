@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+// ThemeToggle removed to enforce permanent dark mode
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -49,7 +49,7 @@ export function Navbar() {
                 <a
                   href={link.href}
                   data-cursor="hover"
-                  className="relative rounded-full px-4 py-2 text-sm text-ink-muted transition-colors duration-300 hover:text-ink"
+                  className="relative rounded-full px-4 py-2 text-sm text-white transition-colors duration-300 hover:text-gray-300"
                 >
                   {link.label}
                 </a>
@@ -58,11 +58,11 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <ThemeToggle />
+            {/* Theme toggle removed to enforce dark mode */}
             <a
               href="#contact"
               data-cursor="hover"
-              className="hidden rounded-full bg-white/[0.06] px-5 py-2 text-sm font-medium text-ink transition-colors duration-300 hover:bg-white/[0.12] md:block"
+               className="hidden rounded-full bg-white/[0.06] px-5 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/[0.12] md:block"
             >
               Get in touch
             </a>
@@ -70,7 +70,7 @@ export function Navbar() {
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.06] text-ink md:hidden"
+               className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.06] text-white md:hidden"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>

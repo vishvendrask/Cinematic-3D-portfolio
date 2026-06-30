@@ -18,7 +18,7 @@ export function Footer() {
             </span>
             <span className="text-sm font-semibold">{SITE.name}</span>
           </div>
-          <p className="text-xs text-ink-faint">
+          <p className="text-xs text-gray-300">
             {SITE.role} · {SITE.location}
           </p>
         </div>
@@ -29,7 +29,7 @@ export function Footer() {
               key={link.href}
               href={link.href}
               data-cursor="hover"
-              className="text-sm text-ink-muted transition-colors hover:text-ink"
+                className="text-sm text-white transition-colors hover:text-gray-300"
             >
               {link.label}
             </a>
@@ -45,7 +45,7 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label={s.label}
               data-cursor="hover"
-              className="glass flex h-10 w-10 items-center justify-center rounded-full text-ink-muted transition-all hover:-translate-y-0.5 hover:text-ink"
+                className="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition-all hover:-translate-y-0.5 hover:text-gray-300"
             >
               <s.icon className="h-4 w-4" />
             </a>
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/[0.05] pt-6 text-center text-xs text-ink-faint">
+       <div className="mx-auto mt-10 max-w-7xl border-t border-white/[0.05] pt-6 text-center text-xs text-gray-300">
         © {new Date().getFullYear()} {SITE.name}. Crafted with Next.js, R3F &
         Framer Motion.
       </div>

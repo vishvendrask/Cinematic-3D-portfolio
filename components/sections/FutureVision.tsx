@@ -48,10 +48,10 @@ export function FutureVision() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] text-accent-electric transition-colors duration-300 group-hover:bg-accent-electric/15">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-6 text-xl font-semibold text-ink">
+                  <h3 className="mt-6 text-xl font-semibold text-white">
                   {area.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                 <p className="mt-3 text-sm leading-relaxed text-white">
                   {area.description}
                 </p>
               </motion.div>

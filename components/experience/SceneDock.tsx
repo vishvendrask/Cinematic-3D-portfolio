@@ -32,7 +32,7 @@ export function SceneDock() {
                 : "border-white/25 bg-white/10 group-hover:border-white/60",
             )}
           />
-          <span className="pointer-events-none absolute right-6 whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-2.5 py-1 text-[11px] text-ink-muted opacity-0 backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100">
+           <span className="pointer-events-none absolute right-6 whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-2.5 py-1 text-[11px] text-white opacity-0 backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100">
             {scene.eyebrow.split("·")[0].trim()}
           </span>
         </a>

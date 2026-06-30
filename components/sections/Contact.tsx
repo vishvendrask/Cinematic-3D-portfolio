@@ -45,7 +45,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mx-auto mt-8 max-w-xl text-lg text-ink-muted"
+           className="mx-auto mt-8 max-w-xl text-lg text-white"
         >
           Open to senior frontend, architecture and platform roles — and
           selective collaborations on products that need durable UI systems.
@@ -74,7 +74,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 aria-label={l.label}
                 data-cursor="hover"
-                className="glass flex h-12 w-12 items-center justify-center rounded-full text-ink-muted transition-all duration-300 hover:-translate-y-1 hover:text-ink"
+                 className="glass flex h-12 w-12 items-center justify-center rounded-full text-white transition-all duration-300 hover:-translate-y-1 hover:text-ink"
               >
                 <l.icon className="h-5 w-5" />
               </a>

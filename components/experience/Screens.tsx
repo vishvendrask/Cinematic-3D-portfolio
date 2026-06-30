@@ -137,7 +137,7 @@ function DesktopApp() {
           className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[12px] uppercase tracking-[0.25em] text-white/70"
         >
           <Sparkles className="h-3.5 w-3.5 text-accent-electric" />
-          Senior Frontend Engineer
+          <span className="text-white">Senior Frontend Engineer</span>
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 28 }}

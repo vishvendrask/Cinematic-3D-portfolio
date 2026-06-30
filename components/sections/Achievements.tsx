@@ -37,7 +37,7 @@ export function Achievements() {
                     decimals={a.decimals}
                   />
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+                 <p className="mt-4 text-sm leading-relaxed text-white">
                   {a.label}
                 </p>
               </div>

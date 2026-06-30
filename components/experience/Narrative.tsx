@@ -52,7 +52,7 @@ export function Narrative() {
             <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-gradient sm:text-5xl lg:text-6xl">
               {scene.title}
             </h2>
-            <p className="mt-5 max-w-lg text-pretty text-base leading-relaxed text-ink-muted sm:text-lg">
+            <p className="mt-5 max-w-lg text-pretty text-base leading-relaxed text-white sm:text-lg">
               {scene.description}
             </p>
             {index === 0 && (
@@ -67,10 +67,10 @@ export function Narrative() {
                     />
                   </span>
                   <div>
-                    <p className="text-base font-semibold text-ink">{SITE.name}</p>
-                    <p className="text-sm text-ink-muted">
-                      {SITE.role} · {SITE.location}
-                    </p>
+                     <p className="text-base font-semibold text-white">{SITE.name}</p>
+                     <p className="text-sm text-white">
+                       {SITE.role} · {SITE.location}
+                     </p>
                   </div>
                 </div>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -108,10 +108,10 @@ export function Narrative() {
                       <div className="min-w-0 flex-1">
                         <div className="flex items-baseline justify-between gap-2">
                           <h3 className="truncate text-base font-semibold text-ink">{p.title}</h3>
-                          <span className="shrink-0 font-mono text-[11px] text-ink-faint">{p.year}</span>
+                           <span className="shrink-0 font-mono text-[11px] text-white">{p.year}</span>
                         </div>
-                        <p className="mt-0.5 truncate text-xs text-ink-faint">{p.category}</p>
-                        <p className="mt-1 line-clamp-1 text-xs text-ink-muted">{p.tagline}</p>
+                         <p className="mt-0.5 truncate text-xs text-white">{p.category}</p>
+                         <p className="mt-1 line-clamp-1 text-xs text-white">{p.tagline}</p>
                       </div>
                     </div>
                     <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
@@ -130,7 +130,7 @@ export function Narrative() {
                             {p.stack.map((s) => (
                               <span
                                 key={s}
-                                className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-ink-muted"
+                                 className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-white"
                               >
                                 {s}
                               </span>
@@ -139,11 +139,11 @@ export function Narrative() {
                           <dl className="space-y-2 text-xs">
                             <div>
                               <dt className="font-semibold text-accent-glow">Challenge</dt>
-                              <dd className="text-ink-muted">{p.challenge}</dd>
+                               <dd className="text-white">{p.challenge}</dd>
                             </div>
                             <div>
                               <dt className="font-semibold text-accent-glow">Solution</dt>
-                              <dd className="text-ink-muted">{p.solution}</dd>
+                               <dd className="text-white">{p.solution}</dd>
                             </div>
                             <div>
                               <dt className="mb-1 font-semibold text-accent-glow">Impact</dt>
@@ -175,7 +175,7 @@ export function Narrative() {
                       {a.value}
                       {a.suffix}
                     </span>
-                    <p className="mt-1 text-[10px] leading-tight text-ink-faint">{a.label}</p>
+                     <p className="mt-1 text-[10px] leading-tight text-white">{a.label}</p>
                   </div>
                 ))}
               </div>
@@ -185,7 +185,7 @@ export function Narrative() {
                 {VISION_AREAS.map((v) => (
                   <span
                     key={v.title}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-ink-muted"
+                     className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white"
                   >
                     {v.title}
                   </span>
@@ -211,7 +211,7 @@ export function Narrative() {
                     </MagneticButton>
                   </a>
                 </div>
-                <p className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-ink-muted">
+                 <p className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-white">
                   <MapPin className="h-4 w-4 text-accent-electric" />
                   {SITE.location}
                 </p>

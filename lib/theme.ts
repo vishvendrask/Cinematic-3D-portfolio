@@ -30,8 +30,10 @@ export function setTheme(next: Theme) {
   emit();
 }
 
+/** Toggle theme is disabled: always enforce dark mode */
 export function toggleTheme() {
-  setTheme(theme === "dark" ? "light" : "dark");
+  // Force dark mode regardless of current state
+  setTheme("dark");
 }
 
 export function getTheme(): Theme {

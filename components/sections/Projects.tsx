@@ -84,7 +84,7 @@ function ProjectVisual({ project }: { project: Project }) {
 
       <div className="absolute bottom-4 left-4 flex items-center gap-2">
         <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-        <span className="font-mono text-[0.65rem] uppercase tracking-widest text-ink-faint">
+        <span className="font-mono text-[0.65rem] uppercase tracking-widest text-gray-300">
           {project.category}
         </span>
       </div>
@@ -99,15 +99,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="flex h-full flex-col">
           <div className="mb-6 flex items-start justify-between gap-4">
             <div>
-              <span className="font-mono text-xs text-ink-faint">
+               <span className="font-mono text-xs text-white">
                 {project.year}
               </span>
-              <h3 className="mt-1 text-2xl font-semibold text-ink">
+               <h3 className="mt-1 text-2xl font-semibold text-white">
                 {project.title}
               </h3>
             </div>
-            <span
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-ink-muted transition-colors duration-300 group-hover:text-ink"
+               <span
+                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-white transition-colors duration-300 group-hover:text-ink"
               data-cursor="hover"
             >
               <ArrowUpRight className="h-4 w-4" />
@@ -116,7 +116,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
           <ProjectVisual project={project} />
 
-          <p className="mt-6 text-base leading-relaxed text-ink-muted">
+           <p className="mt-6 text-base leading-relaxed text-white">
             {project.tagline}
           </p>
 
@@ -125,7 +125,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <p className="text-xs font-semibold uppercase tracking-widest text-accent-electric">
                 Challenge
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                 <p className="mt-2 text-sm leading-relaxed text-white">
                 {project.challenge}
               </p>
             </div>
@@ -133,21 +133,21 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <p className="text-xs font-semibold uppercase tracking-widest text-accent-purple">
                 Solution
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                 <p className="mt-2 text-sm leading-relaxed text-white">
                 {project.solution}
               </p>
             </div>
           </div>
 
           <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-ink-faint">
+               <p className="text-xs font-semibold uppercase tracking-widest text-white">
               Results
             </p>
             <ul className="mt-3 flex flex-wrap gap-2">
               {project.results.map((r) => (
                 <li
                   key={r}
-                  className="rounded-full bg-white/[0.05] px-3 py-1.5 text-xs text-ink"
+                   className="rounded-full bg-white/[0.05] px-3 py-1.5 text-xs text-white"
                 >
                   {r}
                 </li>
@@ -158,7 +158,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div className="mt-auto pt-6">
             <div className="flex flex-wrap gap-2 border-t border-white/[0.06] pt-5">
               {project.stack.map((s) => (
-                <span key={s} className="font-mono text-xs text-ink-faint">
+                 <span key={s} className="font-mono text-xs text-white">
                   {s}
                 </span>
               ))}
