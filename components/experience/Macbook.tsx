@@ -121,8 +121,8 @@ export function Macbook() {
     // Keep lid open after it has been locked.
     s.lid = 0;
   }
-    s.glow = lerp(s.glow, k.glow, a);
-    s.reflection = lerp(s.reflection, k.reflection, a);
+  s.glow = lerp(s.glow, k.glow, a);
+  s.reflection = lerp(s.reflection, k.reflection, a);
 
     if (root.current) {
       const t = ctx.clock.elapsedTime;
