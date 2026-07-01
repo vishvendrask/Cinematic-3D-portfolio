@@ -33,12 +33,13 @@ export function Experience() {
         <div className="ring-grid absolute inset-0 opacity-[0.05] [mask-image:radial-gradient(circle_at_center,black,transparent_80%)]" />
       </div>
 
-      <ScrollDriver target={stageRef} />
-      <SceneDock />
-
+      {/* The stage element must be rendered before initializing the ScrollDriver so that the ref is available. */}
       <div ref={stageRef} className="relative z-10">
         <Narrative />
       </div>
+
+      <ScrollDriver target={stageRef} />
+      <SceneDock />
     </>
   );
 }

@@ -18,7 +18,8 @@ const useIsomorphicLayoutEffect = typeof window === "undefined" ? useEffect : us
  * its own camera/laptop move while the 3D scene samples one render-free store.
  */
 export function ScrollDriver({ target }: ScrollDriverProps) {
-  const introAnimation = useRef<gsap.core.Tween | null>(null);
+  // Intro animation was previously handled via GSAP. We'll replace it with a simple timeout for reliability in production.
+  const introTimer = useRef<NodeJS.Timeout | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     const el = target.current;
@@ -32,41 +33,6 @@ export function ScrollDriver({ target }: ScrollDriverProps) {
     setProgress(0);
 
     gsap.registerPlugin(ScrollTrigger);
-
-  // Removed wheel listener that prematurely cancelled the intro animation.
-  // The intro now runs to completion, and scroll control is managed by
-  // GSAP ScrollTrigger instances defined later.
-
-  // Intro animation should start with the laptop closed (progress = 0) and
-  // animate the opening within the first scene (hero). Previously the intro
-  // advanced the global progress to the end of the first segment
-  // (1 / SCENES.length), causing the app to immediately jump to the next
-  // section and display the wrong content. We now animate from 0 to a very
-  // small value so that the hero keyframe (which opens the lid) can play
-  // smoothly without skipping.
-  const targetProgress = { value: 0 };
-  // Delay the intro animation so the laptop appears closed for 1 second
-  // before opening. The animation then moves a tiny amount of progress to
-  // trigger the hero keyframe (which opens the lid).
-  // Wait 1 s with the laptop closed, then animate progress to the end of the
-  // hero segment (1 / SCENES.length). This triggers the hero keyframe, which
-  // opens the lid and displays the correct content while keeping the left
-  // navigation visible.
-  // Animate to just before the end of the hero segment so the hero scene
-  // remains active after the lid opens. This prevents an immediate jump to the
-  // next section.
-  const heroEnd = 1 / SCENES.length;
-  introAnimation.current = gsap.to(targetProgress, {
-    value: heroEnd - 0.001,
-    duration: 2,
-    delay: 1,
-    ease: "power3.inOut",
-    onUpdate: () => setProgress(targetProgress.value),
-    onComplete: () => {
-      introAnimation.current = null;
-        // No wheel listener to remove; intro animation handles its own cleanup.
-    },
-  });
 
     const ctx = gsap.context(() => {
       const segments = SCENES.length;
@@ -90,24 +56,31 @@ export function ScrollDriver({ target }: ScrollDriverProps) {
             end: "bottom top",
             scrub: 0.5,
             invalidateOnRefresh: true,
-            onUpdate: (self) => {
-              if (introAnimation.current?.isActive()) return;
-              setProgress(self.progress * (to - from) + from);
-            },
+          onUpdate: (self) => {
+            // If the intro timer hasn't fired yet, we still want to allow scroll updates.
+            setProgress(self.progress * (to - from) + from);
+          },
           },
         });
       });
     }, el);
 
+    // Simple intro: after a short delay, advance progress just enough to open the lid.
+    const heroEnd = 1 / SCENES.length;
+    introTimer.current = setTimeout(() => {
+      setProgress(heroEnd - 0.001);
+      // Refresh ScrollTrigger after the intro progress change to ensure timelines are in sync.
+      ScrollTrigger.refresh();
+    }, 1000);
+
     return () => {
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "auto";
       }
-      if (introAnimation.current?.isActive()) {
-        introAnimation.current.kill();
-        introAnimation.current = null;
+      if (introTimer.current) {
+        clearTimeout(introTimer.current);
+        introTimer.current = null;
       }
-        // No wheel listener was added, so nothing to remove here.
       ctx.revert();
     };
   }, [target]);

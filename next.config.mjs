@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["three"],
-  experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
-  },
+  // Disabled experimental.optimizePackageImports to avoid missing vendor-chunks in production builds.
+  // This ensures the server bundle includes all necessary code without relying on separate vendor chunks.
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
