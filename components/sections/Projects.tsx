@@ -182,7 +182,7 @@ export function Projects() {
           description="Case studies spanning healthcare, developer tooling, fintech, government and identity."
         />
 
-        <div className="mt-20 grid gap-6 lg:grid-cols-2">
+        <div className="mt-20 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div className="lg:col-span-2">
             <ProjectCard project={feature} index={0} />
           </div>
