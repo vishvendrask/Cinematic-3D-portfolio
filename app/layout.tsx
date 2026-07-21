@@ -9,6 +9,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { SITE } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/next";
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='dark';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
 
@@ -82,6 +83,7 @@ export default function RootLayout({
             <Footer />
           </SmoothScrollProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
